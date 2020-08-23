@@ -34,5 +34,4 @@ public class Background {
             pos2.x = 800;
         }
     }
-
 }
