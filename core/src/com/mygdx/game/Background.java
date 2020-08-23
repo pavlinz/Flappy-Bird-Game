@@ -16,7 +16,7 @@ public class Background {
         tx2 = new Texture("back.png");
         pos = new Vector2(0,0);
         pos2 = new Vector2(800,0);
-        speed = 4;
+        speed = 2;
     }
 
     public void render(SpriteBatch batch) {
