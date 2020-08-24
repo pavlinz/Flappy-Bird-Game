@@ -3,11 +3,15 @@ package com.mygdx.game;
 import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
+import com.badlogic.gdx.audio.Music;
+import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 public class MyGdxGame extends ApplicationAdapter {
+	Music music;
+
 	SpriteBatch batch;
 	Background bg;
 	Bird bird;
@@ -21,6 +25,10 @@ public class MyGdxGame extends ApplicationAdapter {
 		bg = new Background();
 		bird = new Bird();
 		obstacles = new Obstacles();
+		music = Gdx.audio.newMusic(Gdx.files.internal("music.mp3"));
+		music.setLooping(true);
+		music.setVolume(0.1f);
+		music.play();
 		gameOver = false;
 		restart = new Texture("RestartBtn.png");
 	}
@@ -69,5 +77,6 @@ public class MyGdxGame extends ApplicationAdapter {
 	@Override
 	public void dispose () {
 		batch.dispose();
+		music.dispose();
 	}
 }

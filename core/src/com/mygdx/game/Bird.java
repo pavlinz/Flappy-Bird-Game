@@ -25,14 +25,22 @@ public class Bird {
 
     public void update() {
         if(Gdx.input.isKeyPressed(Input.Keys.SPACE)) {
-            vy = 5;
+            flap();
         }
         vy += gravity;
         position.y += vy;
     }
 
+    private void flap() {
+        vy = 5;
+    }
+
     public void recreate() {
         position = new Vector2(100, 350);
         vy = 0;
+    }
+
+    public void dispose() {
+        img.dispose();
     }
 }
